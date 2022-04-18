@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="next-head-count" content="2" />
+    <link rel="preload" href="./_next/static/css/224ec45a38ef089c.css" as="style" />
+    <link rel="stylesheet" href="./_next/static/css/224ec45a38ef089c.css" data-n-g="" /><noscript
+        data-n-css=""></noscript>
+
+</head>
+
+<body>
+    <script>
+        window.onload = function () {
+            var acc = document.getElementsByClassName("accordion");
+            var i;
+
+            for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function () {
+                    /* Toggle between adding and removing the "active" class,
+                    to highlight the button that controls the panel */
+                    this.classList.toggle("active");
+
+                    /* Toggle between hiding and showing the active panel */
+                    var panel = this.nextElementSibling;
+                    if (panel.style.display === "block") {
+                        panel.style.display = "none";
+                    } else {
+                        panel.style.display = "block";
+                    }
+                });
+            }
+
+            var myHandler = function () {
+                photo = document.getElementById('photo')
+                nav = document.getElementById('nav')
+                console.log(photo.src)
+                if (photo.src === "http://127.0.0.1:5501/close.svg") {
+                    photo.src = "menu.svg"
+
+                    nav.classList.toggle("active")
+                }
+                else {
+                    photo.src = "close.svg"
+                    nav.classList.toggle("active")
+
+                }
+
+            }
+            document.getElementById('menu').addEventListener('click', myHandler);
+            var arr = Array.prototype.slice.call(document.getElementsByClassName("accordion2"))
+            arr.forEach(element => {
+                element.addEventListener('click', function () {
+                    console.log("hello")
+                    console.log(this.nextElementSibling)
+                    this.nextElementSibling.style.display = "block"
+
+                });
+            });
+            document.getElementsByClassName("classes")[0].addEventListener("click", function () {
+
+                console.log(this.classList)
+                this.scrollIntoView(false);
+                this.scroll({
+                    top: this.scrollHeight,//scroll to the bottom of the element
+                    behavior: 'smooth' //auto, smooth, initial, inherit
+                });
+            })
+
+            var tableElements = document.getElementsByClassName("close");
+            for (var i = 0; i < tableElements.length; i++) {
+                tableElements[i].addEventListener("click", function () {
+
+                    var modal = document.getElementsByClassName("myModal2");
+                    for (var i = 0; i < modal.length; i++) {
+                        modal.item(i).style.display = "none"
+
+                    }
+
+
+                });
+            }
+
+
+
+
+        }
+    </script>
+
+    <div id="__next" data-reactroot="" class="ff mm ok">
+        <div id="menu">
+            <img id="photo"src="./menu.svg"></img>
+          </div>
+          <nav id="nav" class="active">
+            <div class="logo">
+              <img src="loho.png" alt="">
+              <span style="color: gold;">جامعة</span>
+              <span style="color:rgb(255, 77, 106)">الوادي</span>
+             
+            </div>
+            <ul>
+                <li class="classes" >
+                    <div class="unique"><div
+                            style="display:flex;justify-content:center;align-items:center;width:100%;height:100%">
+                            <a href="index.html"><h4>الرئيسية</h4></a>
+                    </div></div>
+                </li>
+                <li >
+                    <div class="li unique" class="classes" ><div
+                            style="display:flex;justify-content:center;align-items:center;width:100%;height:100%">
+                        <div ><h4>الاقسام</h4>
+                        </div>                            </div></div>
+                        <div class="more">
+                          <a href="main.html">قسم الاعلام الالي</a>
+                          <a href="main.html">قسم الرياضيات</a>
+                          <a href="main.html">قسم الفيزياء</a>
+                          <a href="main.html">قسم الكيمياء</a>
+
+
+
+          
+                        </div>
+                </li><li>
+                  <div class="unique" class="classes" ><div
+                          style="display:flex;justify-content:center;align-items:center;width:100%;height:100%">
+                         <a href="news.html"> <h4>الاعلانات</h4></a>
+                  </div></div>
+              </li>
+                <li  >
+                  <div class="unique" class="classes" ><div
+                          style="display:flex;justify-content:center;align-items:center;width:100%;height:100%">
+                         <a href="event.html"><h4>الاحداث</h4></a> 
+                  </div></div>
+              </li>
+                <li>
+                    <div class="unique" class="classes" ><div
+                            style="display:flex;justify-content:center;align-items:center;width:100%;height:100%">
+                           <a href="static.html"> <h4>المكتبة</h4></a>
+                    </div></div>
+                </li>
+                
+            </ul>
+            <div class="social-media"><a href="www.facebook.com"><img src="facebook.svg" /></a>
+            </div>
+        </nav>
+        <div class="slidercontainer">  
+          <div class="showSlide fade">  
+             <a href="./eventandnews.html"> <img src="first.jpeg" /></a>  
+              <div class="content"><p style="
+              font-size: 25px;
+              max-width: 90%; 
+                 background-color: transparent;
+                  flex-direction: column;
+                  justify-content: baseline;
+                  align-items: center;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  color:white;
+                  overflow: hidden;">حفل تكريم للطلبة </p></div>  
+          </div>  
+          <div class="showSlide fade">  
+              <a href="./eventandnews.html"><img src="second.jpeg" />  </a>
+              <div class="content"><p style=" 
+              max-width: 90%; 
+                 font-size: 25px;
+                  flex-direction: column;
+                  justify-content: baseline;
+                  align-items: center;
+                  text-overflow: ellipsis;
+                  background-color: transparent;
+                  white-space: nowrap;
+                  color:white;
+                  overflow: hidden;">حملة التبرع بالدم </p></div>  
+          </div>  
+    
+          <div class="showSlide fade">  
+              <a href="./eventandnews.html"><img src="third.jpeg" />  </a>
+              <div class="content"><p style=" color:white;  
+                 background-color: transparent;
+                 font-size: 25px;
+                 max-width: 90%;
+                  flex-direction: column;
+                  justify-content: baseline;
+                  align-items: center;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  overflow: hidden;">الملتقﻻ الوطني الاول حول الكيمياء</p>  </div>  
+          </div>  
+          <div class="showSlide fade">  
+              <a href="./eventandnews.html"><img src="fourth.jpeg" /> </a> 
+              <div class="content"><p style="   
+                 background-color: transparent;
+                 font-size: 25px;
+                max-width: 90%;
+                  flex-direction: column;
+                  justify-content: baseline;
+                  align-items: center;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  color:white;
+                  overflow: hidden;">استقبال وفد تطوير التقنيات</p></div>  
+          </div>  
+          <div class="place">
+            <div class="circle1"></div>
+            <div class="circle1"></div>
+            <div class="circle1"></div>
+            <div class="circle1"></div>
+            
+           
+     
+           </div>  
+           
+          
+          
+          
+    
+    
+            <!-- Navigation arrows -->  
+            <a class="left" onclick="nextSlide(-1)">❮</a>  
+            <a class="right" onclick="nextSlide(1)">❯</a> 
+    
+        </div> 
+          
+            <script type="text/javascript">  
+                var slide_index = 1;  
+                displaySlides(slide_index);  
+          
+                function nextSlide(n) {  
+                    displaySlides(slide_index += n);  
+                }  
+                window.setInterval(function(){
+                    nextSlide(1);
+                },3000);
+          
+                function currentSlide(n) {  
+                    displaySlides(slide_index = n);  
+                }  
+          
+                function displaySlides(n) {  
+                    var i;  
+                    var slides = document.getElementsByClassName("showSlide"); 
+                    var circles = document.getElementsByClassName("circle1");  
+     
+                    if (n > slides.length) { slide_index = 1 }  
+                    if (n < 1) { slide_index = slides.length }  
+                    for (i = 0; i < slides.length; i++) {  
+                        slides[i].style.display = "none";
+                        circles[i].classList.remove("active");  
+                       
+                    }  
+                    slides[slide_index - 1].style.display = "block";  
+                circles[slide_index - 1].classList.add("active");
+                  }   
+            </script>  
+    
+        <div class="big">
+            <div class="result">
+                <div style="display:flex;justify-content:center;align-items:center;flex-direction:column">
+                    <div class="title2">
+                        <h1 class="title3">نتائج الامتحانات</h1>
+                    </div>
+                    <hr />
+                </div><button class="accordion">دورة عادية</button>
+                <div class="panel">
+                    <div class="main2">
+                        <div class="row2">
+                            <div class="column">
+                                <div class="card2">
+                                    <h3>module</h3>
+                                    <div class="container2">
+                                        <a href="./bigcontent.html" style="width: auto;">
+                                            <div class="linkstudy">
+                                                <h5> الفوج الاول </h5>
+                                            </div>
+                                        </a>
+                                        <a href="./bigcontent.html" style="width: auto;">
+                                            <div class="linkstudy">
+                                                <h5> الفوج الاول </h5>
+                                            </div>
+                                        </a>
+                                        <a href="./bigcontent.html" style="width: auto;">
+                                            <div class="linkstudy">
+                                                <h5> الفوج الاول </h5>
+                                            </div>
+                                        </a>
+                                        <a href="./bigcontent.html" style="width: auto;">
+                                            <div class="linkstudy">
+                                                <h5> الفوج الاول </h5>
+                                            </div>
+                                        </a>
+                                        <a href="./bigcontent.html" style="width: auto;">
+                                            <div class="linkstudy">
+                                                <h5> الفوج الاول </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="card2">
+                                    <h3>module</h3>
+                                    <div class="container2">
+                                        <a href="./bigcontent.html" style="width: auto;">
+                                            <div class="linkstudy">
+                                                <h5> الفوج الاول </h5>
+                                            </div>
+                                        </a>
+                                        <a href="./bigcontent.html" style="width: auto;">
+                                            <div class="linkstudy">
+                                                <h5> الفوج الاول </h5>
+                                            </div>
+                                        </a>
+                                        <a href="./bigcontent.html" style="width: auto;">
+                                            <div class="linkstudy">
+                                                <h5> الفوج الاول </h5>
+                                            </div>
+                                        </a>
+                                        <a href="./bigcontent.html" style="width: auto;">
+                                            <div class="linkstudy">
+                                                <h5> الفوج الاول </h5>
+                                            </div>
+                                        </a>
+                                        <a href="./bigcontent.html" style="width: auto;">
+                                            <div class="linkstudy">
+                                                <h5> الفوج الاول </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="card2">
+                                    <h3>module</h3>
+                                    <div class="container2">
+                                        <a href="./bigcontent.html" style="width: auto;">
+                                            <div class="linkstudy">
+                                                <h5> الفوج الاول </h5>
+                                            </div>
+                                        </a>
+                                        <a href="./bigcontent.html" style="width: auto;">
+                                            <div class="linkstudy">
+                                                <h5> الفوج الاول </h5>
+                                            </div>
+                                        </a>
+                                        <a href="./bigcontent.html" style="width: auto;">
+                                            <div class="linkstudy">
+                                                <h5> الفوج الاول </h5>
+                                            </div>
+                                        </a>
+                                        <a href="./bigcontent.html" style="width: auto;">
+                                            <div class="linkstudy">
+                                                <h5> الفوج الاول </h5>
+                                            </div>
+                                        </a>
+                                        <a href="./bigcontent.html" style="width: auto;">
+                                            <div class="linkstudy">
+                                                <h5> الفوج الاول </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="card2">
+                                    <h3>module</h3>
+                                    <div class="container2">
+                                        <a href="./bigcontent.html" style="width: auto;">
+                                            <div class="linkstudy">
+                                                <h5> الفوج الاول </h5>
+                                            </div>
+                                        </a>
+                                        <a href="./bigcontent.html" style="width: auto;">
+                                            <div class="linkstudy">
+                                                <h5> الفوج الاول </h5>
+                                            </div>
+                                        </a>
+                                        <a href="./bigcontent.html" style="width: auto;">
+                                            <div class="linkstudy">
+                                                <h5> الفوج الاول </h5>
+                                            </div>
+                                        </a>
+                                        <a href="./bigcontent.html" style="width: auto;">
+                                            <div class="linkstudy">
+                                                <h5> الفوج الاول </h5>
+                                            </div>
+                                        </a>
+                                        <a href="./bigcontent.html" style="width: auto;">
+                                            <div class="linkstudy">
+                                                <h5> الفوج الاول </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><button class="accordion">دورة استثنائية</button>
+                <div class="panel">
+                    <div class="main2">
+                        <div class="row2">
+                            <div class="column">
+                                <div class="card2">
+                                    <h3>module</h3>
+                                    <div class="container2">
+                                        <div class="linkstudy">
+                                            <h5>this is test</h5>
+                                        </div>
+                                        <div class="linkstudy">
+                                            <h5>this is test</h5>
+                                        </div>
+                                        <div class="linkstudy">
+                                            <h5>this is test</h5>
+                                        </div>
+                                        <div class="linkstudy">
+                                            <h5>this is test</h5>
+                                        </div>
+                                        <div class="linkstudy">
+                                            <h5>this is test</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="card2">
+                                    <h3>module</h3>
+                                    <div class="container2">
+                                        <div class="linkstudy">
+                                            <h5>this is test</h5>
+                                        </div>
+                                        <div class="linkstudy">
+                                            <h5>this is test</h5>
+                                        </div>
+                                        <div class="linkstudy">
+                                            <h5>this is test</h5>
+                                        </div>
+                                        <div class="linkstudy">
+                                            <h5>this is test</h5>
+                                        </div>
+                                        <div class="linkstudy">
+                                            <h5>this is test</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="card2">
+                                    <h3>module</h3>
+                                    <div class="container2">
+                                        <div class="linkstudy">
+                                            <h5>this is test</h5>
+                                        </div>
+                                        <div class="linkstudy">
+                                            <h5>this is test</h5>
+                                        </div>
+                                        <div class="linkstudy">
+                                            <h5>this is test</h5>
+                                        </div>
+                                        <div class="linkstudy">
+                                            <h5>this is test</h5>
+                                        </div>
+                                        <div class="linkstudy">
+                                            <h5>this is test</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="card2">
+                                    <h3>module</h3>
+                                    <div class="container2">
+                                        <div class="linkstudy">
+                                            <h5>this is test</h5>
+                                        </div>
+                                        <div class="linkstudy">
+                                            <h5>this is test</h5>
+                                        </div>
+                                        <div class="linkstudy">
+                                            <h5>this is test</h5>
+                                        </div>
+                                        <div class="linkstudy">
+                                            <h5>this is test</h5>
+                                        </div>
+                                        <div class="linkstudy">
+                                            <h5>this is test</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section2" id="classes">
+                <div style="display:flex;justify-content:center;align-items:center;flex-direction:column">
+                    <div class="title2 anim">
+                        <h1 class="title3">الجداول الزمنية</h1>
+                    </div>
+                    <hr class="anim" />
+                    <div class="disc anim">
+                        <p class="para anim">هنا نضع وصف مختصر لهذه الاقسام مثل فرص العمل او نبذة تاريخية لافتتاحه في
+                            جامعتنا</p>
+                    </div>
+                    <div class="content"><div>
+                            <div class="name anim accordion2">
+                                <div class="card3">
+                                    <div class="imge"><img src="./calendra3.svg" /></div>
+                                </div>
+                                <h1 class="title3">الجدول الاول </h1>
+                            </div>
+                            <div id="myModal" class="myModal2">
+                                <div class="modal-content"><span class="close"><img src="close2.svg" alt=""></span>
+                                    <span class="download"><a href="test.pdf" download=""><img src="download.svg"
+                                                alt=""></a></span><img src="/time.jpg" alt="Mike"
+                                        style="width:100%" /></div>
+                            </div>
+                        </div><div>
+                            <div class="name anim accordion2">
+                                <div class="card3">
+                                    <div class="imge"><img src="./calendra3.svg" /></div>
+                                </div>
+                                <h1 class="title3">الجدول الثاني</h1>
+                            </div>
+                            <div id="myModal" class="myModal2">
+                                <div class="modal-content"><span class="close"><img src="close2.svg" alt=""></span>
+                                    <span class="download"><a href="test.pdf" download=""><img src="download.svg"
+                                                alt=""></a></span><iframe src="./test.pdf" width="100%" height="100%"  ></iframe></div>
+                            </div>
+                        </div>
+                        <div class="any">
+                            <div class="name anim accordion2">
+                                <div class="card3">
+                                    <div class="imge"><img src="./calendra3.svg" /></div>
+                                </div>
+                                <h1 class="title3">الجدول الثاني</h1>
+                            </div>
+                            <div id="myModal" class="myModal2">
+                                <div class="modal-content"><span class="close"><img src="close2.svg" alt=""></span>
+                                    <span class="download"><a href="test.pdf" download=""><img src="download.svg"
+                                                alt=""></a></span><img src="/time.jpg" alt="Mike"
+                                        style="width:100%" /></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="section2" id="classes">
+                <div style="display:flex;justify-content:center;align-items:center;flex-direction:column">
+                    <div class="title2 anim">
+                        <h1 class="title3">تفويج الطلبة</h1>
+                    </div>
+                    <hr class="anim" />
+                    <div class="disc anim">
+                        <p class="para anim">هنا نضع وصف مختصر لهذه الاقسام مثل فرص العمل او نبذة تاريخية لافتتاحه في
+                            جامعتنا</p>
+                    </div>
+                    <div class="content">
+                        <div>
+                            <div class="name anim accordion2">
+                                <div class="card3">
+                                    <div class="imge"><img src="./group.svg" /></div>
+                                </div>
+                                <h1 class="title3">الفوج الثاني</h1>
+                            </div>
+                            <div id="myModal" class="myModal2">
+                                <div class="modal-content"><span class="close"><img src="close2.svg" alt=""></span>
+                                    <span class="download"><a href="test.pdf" download=""><img src="download.svg"
+                                                alt=""></a></span><img src="/ropot2.jpg" alt="Mike"
+                                        style="width:100%" /></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="name anim accordion2">
+                                <div class="card3">
+                                    <div class="imge"><img src="./group.svg" /></div>
+                                </div>
+                                <h1 class="title3">الفوج الثاني</h1>
+                            </div>
+                            <div id="myModal" class="myModal2">
+                                <div class="modal-content"><span class="close"><img src="close2.svg" alt=""></span>
+                                    <span class="download"><a href="test.pdf" download=""><img src="download.svg"
+                                                alt=""></a></span><img src="/ropot2.jpg" alt="Mike"
+                                        style="width:100%" /></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="name anim accordion2">
+                                <div class="card3">
+                                    <div class="imge"><img src="./group.svg" /></div>
+                                </div>
+                                <h1 class="title3">الفوج الثاني</h1>
+                            </div>
+                            <div id="myModal" class="myModal2">
+                                <div class="modal-content"><span class="close"><img src="close2.svg" alt=""></span>
+                                    <span class="download"><a href="test.pdf" download=""><img src="download.svg"
+                                                alt=""></a></span><img src="/ropot2.jpg" alt="Mike"
+                                        style="width:100%" /></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="section2" id="classes">
+                <div style="display:flex;justify-content:center;align-items:center;flex-direction:column">
+                    <div class="title2 anim">
+                        <h1 class="title3">قائمة المواد</h1>
+                    </div>
+                    <hr class="anim" />
+                    <div class="disc anim">
+                        <p class="para anim">هنا تجد قائمة المواد التي ندرسونها في هذا الفصل</p>
+                    </div>
+                    <div class="content"><a href="/courses.html">
+                            <div class="name anim">
+                                <div class="card3">
+                                    <div class="imge"><img src="./books1.svg" /></div>
+                                </div>
+                                <h1 class="title3">data bases</h1>
+                            </div>
+                        </a><a href="/courses.html">
+                            <div class="name anim">
+                                <div class="card3">
+                                    <div class="imge"><img src="./books1.svg" /></div>
+                                </div>
+                                <h1 class="title3">algorithems</h1>
+                            </div>
+                        </a>
+                        <a href="/courses.html">
+                            <div class="name anim">
+                                <div class="card3">
+                                    <div class="imge"><img src="./books1.svg" /></div>
+                                </div>
+                                <h1 class="title3">C language</h1>
+                            </div>
+                        </a><a href="/courses.html">
+                            <div class="name anim">
+                                <div class="card3">
+                                    <div class="imge"><img src="./books1.svg" /></div>
+                                </div>
+                                <h1 class="title3">graphe theore</h1>
+                            </div>
+                        </a><a href="/courses.html">
+                            <div class="name anim">
+                                <div class="card3">
+                                    <div class="imge"><img src="./books1.svg" /></div>
+                                </div>
+                                <h1 class="title3">operating system</h1>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer" >
+            <div class="first-footer">
+              <div class="links-footer">
+                  <h6>روابط خارجية</h6>
+                  <ul>
+                    
+                    <li><a href="def.html">معلومات حول الكلية</a> </li>
+                    <li><a href="about.html">عن الاختصاصات</a> </li>
+                    <li><a href=""> مخابر البحث</a> </li>
+                    <li>email:<a>d-s-exact@univ-eloued.dz</a> </li>
+                    <li>TEL:<a>032210781</a> </li>
+                    <li>FAX:<a>032120703</a> </li>
+                    <li>Adress:<a>القطب الجامعي الجديد –الشط
+  
+                    </a> </li>
+  
+                    
+                    
+              </div>
+              <div class="links-footer">
+                  <h6>روابط الاقسام</h6 >
+                  <ul>
+                    <li><a href="teacher.html">اساتذة قسم الاعلام الالي</a> </li>
+                    <li><a href="teacher.html"> اساتذة قسم الكيمياء </a> </li>
+                    <li><a href="teacher.html">اساتذة قسم الفيزياء</a> </li>
+                    <li><a href="teacher.html">اساتذة قسم الرياضيات</a> </li>
+                   
+                  </ul>
+              </div>
+             
+          </div>
+              <hr />
+              <div class="second-footer">
+                  
+                  <div class="copy-rigth">
+                      <p class="copyright">© SOFT LINES GROUP EL_OUED 2022</p>
+                  </div>
+              </div>
+              <div class="para-footer">
+                  <p>الموقع الالكتروني الخاص بكلية العلوم الدقيقة جامعة الوادي</p>
+              </div>
+          </div>
+
+    </div>
+    
+</body>
+
+</html>

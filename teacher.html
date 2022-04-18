@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="next-head-count" content="2" />
+    <link rel="preload" href="./_next/static/css/224ec45a38ef089c.css" as="style" />
+    <link rel="stylesheet" href="./_next/static/css/224ec45a38ef089c.css" data-n-g="" /><noscript
+        data-n-css=""></noscript>
+   
+</head>
+
+<body class="mm courses teacher2">
+  <script>function copy(ele){
+        console.log(ele.textContent);
+        navigator.clipboard.writeText(ele.textContent);
+
+    }
+    window.onload=function(){
+    
+      
+
+  
+    var myHandler = function() { photo =  document.getElementById('photo')
+    nav =  document.getElementById('nav')
+    console.log(photo.src)
+    if(photo.src==="http://127.0.0.1:5501/close.svg"){
+      photo.src="menu.svg"
+      
+      nav.classList.toggle("active")
+    }
+    else{
+     photo.src="close.svg"
+     nav.classList.toggle("active")
+      
+    }
+          
+    }
+    document.getElementById('menu').addEventListener('click', myHandler);
+    
+    document.getElementsByClassName("classes")[0].addEventListener("click",function (){
+      
+        console.log(this.classList)
+     this.scrollIntoView(false);
+      this.scroll({
+	top: this.scrollHeight,//scroll to the bottom of the element
+	behavior: 'smooth' //auto, smooth, initial, inherit
+});
+    })
+
+    
+   
+
+  }
+</script>
+
+<div id="menu">
+    <img id="photo"src="./menu.svg"></img>
+  </div>
+  <nav id="nav" class="active">
+            <div class="logo">
+              <img src="loho.png" alt="">
+              <span style="color: gold;">جامعة</span>
+              <span style="color:rgb(255, 77, 106)">الوادي</span>
+             
+            </div>
+            <ul>
+                <li class="classes" >
+                    <div class="unique"><div
+                            style="display:flex;justify-content:center;align-items:center;width:100%;height:100%">
+                            <a href="index.html"><h4>الرئيسية</h4></a>
+                    </div></div>
+                </li>
+                <li >
+                    <div class="li unique" class="classes" ><div
+                            style="display:flex;justify-content:center;align-items:center;width:100%;height:100%">
+                        <div ><h4>الاقسام</h4>
+                        </div>                            </div></div>
+                        <div class="more">
+                          <a href="main.html">قسم الاعلام الالي</a>
+                          <a href="main.html">قسم الرياضيات</a>
+                          <a href="main.html">قسم الفيزياء</a>
+                          <a href="main.html">قسم الكيمياء</a>
+
+
+
+          
+                        </div>
+                </li><li>
+                  <div class="unique" class="classes" ><div
+                          style="display:flex;justify-content:center;align-items:center;width:100%;height:100%">
+                         <a href="news.html"> <h4>الاعلانات</h4></a>
+                  </div></div>
+              </li>
+                <li  >
+                  <div class="unique" class="classes" ><div
+                          style="display:flex;justify-content:center;align-items:center;width:100%;height:100%">
+                         <a href="event.html"><h4>الاحداث</h4></a> 
+                  </div></div>
+              </li>
+                <li>
+                    <div class="unique" class="classes" ><div
+                            style="display:flex;justify-content:center;align-items:center;width:100%;height:100%">
+                           <a href="static.html"> <h4>المكتبة</h4></a>
+                    </div></div>
+                </li>
+                
+            </ul>
+              <div class="social-media"><a href="www.facebook.com"><img src="facebook.svg" /></a>
+              </div>
+          </nav>
+        <div class='galary' >
+            <div class="over">
+              <div class="line">
+                <h2 class='title8'>قائمة ايمايل الاساتذة</h2>
+              </div >
+            
+          
+            </div>
+              <div class='thefinal'>
+          
+          
+          
+          
+          
+          <img  src="./email.jpg"  />
+          
+          
+          
+          
+          
+          </div>
+
+
+
+      
+          </div>
+          <div class="section2" id="classes">
+            <div style="display:flex;justify-content:center;align-items:center;flex-direction:column">
+                
+                <div class="disc anim">
+                    <p class="para anim">انقر على الايمايل لنسخه</p>
+                </div>
+                <div class="content">
+                    <div class="teacher">
+                    <h5>name of teacher will appear here</h5>
+                    <button onclick="copy(this)">test@exampl.com</button>
+
+                    </div>
+                    <div class="teacher">
+                        <h5>name of teacher will appear here</h5>
+                        <button onclick="copy(this)">test2@exampl.com</button>
+    
+                        </div>
+                        <div class="teacher">
+                            <h5>name of teacher will appear here</h5>
+                            <button onclick="copy(this)">test3@exampl.com</button>
+        
+                            </div>
+                            <div class="teacher">
+                                <h5>name of teacher will appear here</h5>
+                                <button onclick="copy(this)">test4@exampl.com</button>
+            
+                                </div>
+                                <div class="teacher">
+                                    <h5>name of teacher will appear here</h5>
+                                    <button onclick="copy(this)">test5@exampl.com</button>
+                
+                                    </div>
+                    
+       
+
+
+
+
+
+
+
+                </div>
+            </div> 
+        </div>
+
+       
+       
+        <div class="footer" >
+            <div class="first-footer">
+              <div class="links-footer">
+                  <h6>روابط خارجية</h6>
+                  <ul>
+                    
+                    <li><a href="def.html">معلومات حول الكلية</a> </li>
+                    <li><a href="about.html">عن الاختصاصات</a> </li>
+                    <li><a href=""> مخابر البحث</a> </li>
+                    <li>email:<a>d-s-exact@univ-eloued.dz</a> </li>
+                    <li>TEL:<a>032210781</a> </li>
+                    <li>FAX:<a>032120703</a> </li>
+                    <li>Adress:<a>القطب الجامعي الجديد –الشط
+  
+                    </a> </li>
+  
+                    
+                    
+              </div>
+              <div class="links-footer">
+                  <h6>روابط الاقسام</h6 >
+                  <ul>
+                    <li><a href="teacher.html">اساتذة قسم الاعلام الالي</a> </li>
+                    <li><a href="teacher.html"> اساتذة قسم الكيمياء </a> </li>
+                    <li><a href="teacher.html">اساتذة قسم الفيزياء</a> </li>
+                    <li><a href="teacher.html">اساتذة قسم الرياضيات</a> </li>
+                   
+                  </ul>
+              </div>
+             
+          </div>
+              <hr />
+              <div class="second-footer">
+                  
+                  <div class="copy-rigth">
+                      <p class="copyright">© SOFT LINES GROUP EL_OUED 2022</p>
+                  </div>
+              </div>
+              <div class="para-footer">
+                  <p>الموقع الالكتروني الخاص بكلية العلوم الدقيقة جامعة الوادي</p>
+              </div>
+          </div>
+     
+</body>
+
+</html>

@@ -1,0 +1,305 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Image Slider With A Masking Effect</title>
+<script src="prefixfree.min.js"></script>
+<link href="http://www.cssscript.com/wp-includes/css/sticky.css" rel="stylesheet" type="text/css">
+<style>
+
+/* reset */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block }
+
+body { line-height: 1 }
+
+ol, ul { list-style: none }
+
+blockquote, q { quotes: none }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0
+}
+
+/* main */
+
+html, body {
+  height: 100%;
+  position: relative;
+  font-family: Roboto;
+  background: #f8f8f8;
+}
+
+.slider-ctr {
+  width: 600px;
+  height: 450px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -220px;
+  margin-left: -300px;
+  box-sizing: border-box;
+  border: 10px solid white;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 10px 15px 3px rgba(0, 0, 0, 0.15), 0 5px 20px 3px rgba(0, 0, 0, 0.1);
+}
+
+.slider-ctr:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to bottom, transparent 70%, rgba(0, 0, 0, 0.6) 100%);
+  background: -webkit-linear-gradient(to bottom, transparent 70%, rgba(0, 0, 0, 0.6) 100%);
+  pointer-events: none;
+  z-index: 9;
+}
+
+.slider-control {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  width: 80px;
+  overflow: hidden;
+  border-radius: 3px;
+  box-shadow: 0 3px 3px 3px rgba(0, 0, 0, 0.15);
+  z-index: 99;
+}
+
+.slider-control .control {
+  width: 50%;
+  height: 40px;
+  display: block;
+  float: left;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  transition: .3s all ease;
+  background: white;
+}
+
+.slider-control .control .icon {
+  pointer-events: none;
+  transition: .3s all ease;
+}
+
+.slider-control .control.disabled {
+  pointer-events: none;
+  background: #ddd;
+}
+
+.slider-control .control.disabled .icon { opacity: .5; }
+
+.slide {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: 0.45s all cubic-bezier(0.65, 0.05, 0.36, 1);
+  -webkit-clip-path: inset(0 0 0 0);
+  clip-path: inset(0 0 0 0);
+}
+
+.slide:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.125);
+}
+
+.slide.slide-on {
+  -webkit-clip-path: inset(0 100% 0 0);
+  clip-path: inset(0 100% 0 0);
+}
+
+.slide.text-on .title {
+  transition: 0.3s all cubic-bezier(0.65, 0.05, 0.36, 1) 0.45s;
+  -webkit-clip-path: inset(0 0 0 0);
+  clip-path: inset(0 0 0 0);
+}
+
+.slide.text-on .author {
+  transition: 0.3s all cubic-bezier(0.65, 0.05, 0.36, 1) 0.6s;
+  -webkit-clip-path: inset(0 0 0 0);
+  clip-path: inset(0 0 0 0);
+}
+
+.slide img { display: block; }
+
+.slide figcaption {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+.slide .title {
+  font-size: 50px;
+  margin-bottom: 2px;
+  color: white;
+  transition: 0.3s all cubic-bezier(0.65, 0.05, 0.36, 1) 0.45s;
+  -webkit-clip-path: inset(0 0 0 100%);
+  clip-path: inset(0 0 0 100%);
+  font-weight: 400;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.slide .author {
+  font-size: 16px;
+  color: white;
+  opacity: .8;
+  transition: 0.3s all cubic-bezier(0.65, 0.05, 0.36, 1) 0.45s;
+  -webkit-clip-path: inset(0 0 0 100%);
+  clip-path: inset(0 0 0 100%);
+  font-weight: 300;
+  letter-spacing: 3px;
+  position: relative;
+  z-index: 9;
+}
+</style>
+</head>
+
+<body>
+
+<div class="slider-ctr">
+  <figure class="slide"><img src="https://unsplash.it/600/450?image=1048">
+    <figcaption>
+      <div class="title">Slide 1</div>
+      <div class="author">Anthony DELANOIX</div>
+    </figcaption>
+  </figure>
+  <figure class="slide"><img src="https://unsplash.it/600/450?image=1047">
+    <figcaption>
+      <div class="title">Slide 2</div>
+      <div class="author">sergee bee</div>
+    </figcaption>
+  </figure>
+  <figure class="slide"><img src="https://unsplash.it/600/450?image=1046">
+    <figcaption>
+      <div class="title">Slide 3</div>
+      <div class="author">Wilson Lau</div>
+    </figcaption>
+  </figure>
+  <figure class="slide text-on"><img src="https://unsplash.it/600/450?image=1045">
+    <figcaption>
+      <div class="title">Slide 4</div>
+      <div class="author">Aleksandra</div>
+    </figcaption>
+  </figure>
+  <div class="slider-control">
+    <div class="control prev disabled">
+      <div class="icon ion-chevron-left"></div>
+    </div>
+    <div class="control next">
+      <div class="icon ion-chevron-right"></div>
+    </div>
+  </div>
+</div>
+<script>
+// buttons
+var sliderControl = document.querySelector(".slider-control");
+
+// slides informations
+var slides = document.querySelectorAll(".slide"),
+    slidesLength = slides.length;
+
+// slides array
+var slidesArr = [].slice.call(slides);
+
+// reverse array sorting
+slidesArr = slidesArr.reverse();
+
+// slide current
+var slideCurrent = 0;
+
+sliderControl.addEventListener("click", function(e){
+  target = e.target;
+  
+  // get next button
+  if(target.classList.contains("next")){
+
+    next = e.target,
+    prev = next.previousElementSibling,
+    nextSlide = slidesArr[slideCurrent + 1],
+    slide = slidesArr[slideCurrent];
+    
+    slide.classList.add("slide-on");
+    slide.classList.remove("text-on");
+    nextSlide.classList.add("text-on");
+    
+    slideCurrent += 1;
+    
+    if(slideCurrent > 0) {
+      prev.classList.remove("disabled");
+    }
+    
+    if(slideCurrent === slidesLength - 1){
+      next.classList.add("disabled");
+    }
+  }
+  
+  // get prev button
+  if(target.classList.contains("prev")){
+    
+    slideCurrent -= 1;
+    
+    prev = e.target,
+    next = prev.nextElementSibling,
+    prevSlide = slidesArr[slideCurrent + 1],
+    slide = slidesArr[slideCurrent];
+    
+    prevSlide.classList.remove("text-on");
+    slide.classList.remove("slide-on");
+    slide.classList.add("text-on");
+    
+    if(slideCurrent === slidesLength - 2){
+      next.classList.remove("disabled");
+    }
+
+    if(slideCurrent === 0){
+      prev.classList.add("disabled");
+    }
+    
+  }
+
+});
+
+balapaCop("Image Slider", "#999");
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46156385-1', 'cssscript.com');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<script>var divs=document.getElementsByClassName("anim");
+ 
+  const myObserver = new IntersectionObserver(callback, options)
+  const options = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.2
+}
+  function callback(entries, observer){
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("up")
+      // stop observing this element
+      observer.unobserve(entry.target)
+    }
+    
+  })
+}
+
+for(var i =4;i<divs.length;i++){
+      myObserver.observe(divs[i])
+
+  }</script>
+  *********************************************************************----------
